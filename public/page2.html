@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome to Firebase Hosting</title>
+
+<!-- update the version number as needed --> 
+<script defer src="/__/firebase/8.4.1/firebase-app.js"></script> 
+<!-- include only the Firebase features as you need --> 
+<script defer src="/__/firebase/8.4.1/firebase-auth.js"></script> 
+<script defer src="/__/firebase/8.4.1/firebase-database.js"></script> 
+<script defer src="/__/firebase/8.4.1/firebase-firestore.js"></script> 
+<script defer src="/__/firebase/8.4.1/firebase-functions.js"></script> 
+<script defer src="/__/firebase/8.4.1/firebase-messaging.js"></script> 
+<script defer src="/__/firebase/8.4.1/firebase-storage.js"></script> 
+<script defer src="/__/firebase/8.4.1/firebase-analytics.js"></script> 
+<script defer src="/__/firebase/8.4.1/firebase-remote-config.js"></script> 
+<script defer src="/__/firebase/8.4.1/firebase-performance.js"></script> 
+<!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    --> 
+<script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+             try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+</head>
+<body>
+<div><h2>ทำรายการข้อูลภาษี &nbsp;</h2></div>
+
+	<div>
+	<img src="imgs/crycle1.svg" width="15%" height="15%"/>
+	
+	</div>
+
+<div>
+  <p>วันครบอายุภาษี&nbsp;</p>
+  <p>วันครบกำหนดภาษีล่าสุดของท่าน&nbsp;</p>
+  <input  type="date" value='ต่อภาษี'>
+  <p style="color: red">*หากปีครบกำหนดภาษีของ่านไม่ถูกต้อง กรุณากดแก้ไขปี พ.ศ.&nbsp;</p>
+  <div>
+    <button class="button button2">ถัดไป</button>
+  </div>
+</div>
+</body>
+</html>
